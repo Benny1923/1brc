@@ -1,6 +1,7 @@
 package main
 
 import (
+	"1brc/utils"
 	"bufio"
 	"fmt"
 	"math/rand"
@@ -23,8 +24,8 @@ func main() {
 		if i%50_000_000 == 0 && i != 0 {
 			fmt.Printf("Wrote %d measurements in %s \n", i, time.Since(start))
 		}
-		ws := WeatherStations[rand.Intn(len(WeatherStations))]
-		buffer.WriteString(ws.name)
+		ws := utils.WeatherStations[rand.Intn(len(utils.WeatherStations))]
+		buffer.WriteString(ws.Name)
 		buffer.Write([]byte{';'})
 		buffer.WriteString(strconv.FormatFloat(ws.Measurement(), 'f', 1, 64))
 		buffer.Write([]byte{'\n'})

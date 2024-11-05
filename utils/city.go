@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"math"
@@ -6,7 +6,7 @@ import (
 )
 
 type WeatherStation struct {
-	name string
+	Name string
 	temp float64
 }
 
